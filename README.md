@@ -1,4 +1,4 @@
-# Exanple codelithic
+# Example codelithic
 Example how to use codelithic_site
 
 dependents: 
