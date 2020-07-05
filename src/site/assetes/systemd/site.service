@@ -1,0 +1,11 @@
+[Unit]
+Description=Power-off gpu
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/cgi-fcgi -start -connect :3333 /home/emmet/Projects/codelithic2/cmake-build-debug/site
+ExecStop=/usr/bin/pkill -9 site
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
