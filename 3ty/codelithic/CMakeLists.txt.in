@@ -1,0 +1,14 @@
+cmake_minimum_required(VERSION 3.5)
+project(codelithic NONE)
+
+include(ExternalProject)
+ExternalProject_Add(codelithic
+        GIT_REPOSITORY    "https://github.com/codelithic/codelithic"
+        GIT_TAG           "master"
+        SOURCE_DIR        "${CMAKE_CURRENT_BINARY_DIR}/codelithic"
+        BINARY_DIR        "${CMAKE_CURRENT_BINARY_DIR}/codelithic-build"
+        CONFIGURE_COMMAND ""
+        BUILD_COMMAND     ""
+        INSTALL_COMMAND   ""
+        TEST_COMMAND      ""
+)

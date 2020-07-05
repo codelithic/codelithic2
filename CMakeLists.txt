@@ -4,8 +4,10 @@ project(codelithicEXE)
 set(CMAKE_CXX_STANDARD 17)
 
 add_subdirectory(3ty/codelithic)
-include_directories(3ty/codelithic/include)
+include_directories(${CMAKE_CURRENT_BINARY_DIR}/3ty/codelithic/codelithic/include)
+
 include_directories(3ty/logs/)
+
 
 add_executable(tests main.cpp)
 TARGET_LINK_LIBRARIES(tests codelithic codelithic_web log4cplus)
