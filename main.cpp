@@ -9,6 +9,8 @@
 #include <codelithic/web/utils/uri.hpp>
 #include <codelithic/web/zaphodhand.hpp>
 
+#include <wrapperlog4cpp.hpp>
+
 auto longWay(std::string_view path_, std::string &buffer) ->long {
 
     ZaphodHands::ZaphodHand hand{};
@@ -39,8 +41,14 @@ auto main() -> int {
 
     std::string buffer;
     auto A=longWay("https://thenumbat.github.io/cpp-course/sdl2/08/08.html#perf",buffer);
-
     std::cout  << COLOR_Black   <<A  << " "    << buffer << COLOR_Color_Off << std::endl;
+
+
+  CLC_LOGGER_INIZIALIZE("/home/emmet/Projects/codelithic2/3ty/logs/log.ini");
+  auto logger = CLC_LOGGER("ApplicationConsole");
+  CLC_LOGGER_DEBUG(logger, "Application Started");
+
+//
 
     return 0;
 }

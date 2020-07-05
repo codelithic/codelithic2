@@ -5,8 +5,9 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_subdirectory(3ty/codelithic)
 include_directories(3ty/codelithic/include)
+include_directories(3ty/logs/)
 
+add_executable(tests main.cpp)
+TARGET_LINK_LIBRARIES(tests codelithic codelithic_web log4cplus)
 
-add_executable(codelithicEXE main.cpp)
-TARGET_LINK_LIBRARIES(codelithicEXE codelithic codelithic_web)
-
+#da linkare se si usa  3ty/log4cpp/logs.hpp  LINKER--> log4cplus

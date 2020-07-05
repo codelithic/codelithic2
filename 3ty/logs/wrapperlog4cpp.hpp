@@ -1,0 +1,26 @@
+
+#ifndef CODELITHIC_COM_LOGS_HPP
+#define CODELITHIC_COM_LOGS_HPP
+
+#include <log4cplus/configurator.h>
+#include <log4cplus/logger.h>
+#include <log4cplus/loggingmacros.h>
+#include <log4cplus/loglevel.h>
+#include <iomanip>
+
+#define CLC_LOGGER_INIZIALIZE(FILENAME) \
+  ::log4cplus::initialize();          \
+  ::log4cplus::PropertyConfigurator::doConfigure(FILENAME);
+
+#define CLC_LOGGER(LOGGERNAME) \
+  log4cplus::Logger::getInstance(LOG4CPLUS_TEXT(LOGGERNAME))
+
+#define CLC_LOGGER_FATAL(LOGGERNAME, PHRASE) LOG4CPLUS_FATAL(LOGGERNAME, PHRASE)
+#define CLC_LOGGER_ERROR(LOGGERNAME, PHRASE) LOG4CPLUS_ERROR(LOGGERNAME, PHRASE)
+#define CLC_LOGGER_WARN(LOGGERNAME, PHRASE) LOG4CPLUS_WARN(LOGGERNAME, PHRASE)
+#define CLC_LOGGER_INFO(LOGGERNAME, PHRASE) LOG4CPLUS_INFO(LOGGERNAME, PHRASE)
+#define CLC_LOGGER_DEBUG(LOGGERNAME, PHRASE) LOG4CPLUS_DEBUG(LOGGERNAME, PHRASE)
+#define CLC_LOGGER_TRACE(LOGGERNAME, PHRASE) LOG4CPLUS_TRACE(LOGGERNAME, PHRASE)
+
+
+#endif  // CODELITHIC_COM_LOGS_HPP
